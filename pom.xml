@@ -86,7 +86,7 @@
 		<project.binaries>${project.basedir}/target/bin</project.binaries>
 
 		<project.binaries-base>http://universalmediaserver.com/svn/binaries</project.binaries-base>
-		<binary-revision>61</binary-revision>
+		<binary-revision>62</binary-revision>
 
 		<maven-javadoc-plugin-version>2.10.4</maven-javadoc-plugin-version>
 		<git-commit-id-plugin-version>2.2.1</git-commit-id-plugin-version>
@@ -100,6 +100,14 @@
 		 -->
 		<makensis-bin>${project.external-resources}/third-party/nsis/makensis.exe</makensis-bin>
 	</properties>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>ossrh</id>
+			<name>Sonatype OSS Repository</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+			<layout>default</layout>
+		</pluginRepository>
+	</pluginRepositories>
 	<repositories>
 		<!-- GSON -->
 		<repository>
