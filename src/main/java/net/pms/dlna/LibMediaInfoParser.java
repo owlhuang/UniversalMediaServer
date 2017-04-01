@@ -619,11 +619,11 @@ public class LibMediaInfoParser {
 			format = FormatConfiguration.TIFF;
 		// Value can look like "Advanced@L1", "Complex@L2", "MP@LL" or "Simple@L3" with VC-1 or MPEG-4 Visual at this point.	
 		} else if (containsIgnoreCase(value, "@l") && streamType == StreamType.Video) {
-			if (value.contains("avc")) {
+			if ("avc".contains(value)) {
 				media.setAvcLevel(getAvcLevel(value));
 				media.setH264Profile(getAvcProfile(value));
 			}
-			if (value.contains("hevc")) {
+			if ("hevc".contains(value)) {
 				media.setHevcLevel(getHevcLevel(value));
 				media.setH265Profile(getHevcProfile(value));
 			}
