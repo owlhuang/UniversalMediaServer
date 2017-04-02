@@ -2476,6 +2476,7 @@ public abstract class DLNAResource extends HTTPResource implements Cloneable, Ru
 					}
 				} else if (getFormat() != null && getFormat().isAudio()) {
 					if (media != null && media.isMediaparsed()) {
+					   if ( media.getDuration() != 0) {
 						addAttribute(sb, "bitrate", media.getBitrate());
 						if (media.getDuration() != null) {
 							wireshark.append(" duration=").append(convertTimeToString(media.getDuration(), DURATION_TIME_FORMAT));
@@ -2516,10 +2517,11 @@ public abstract class DLNAResource extends HTTPResource implements Cloneable, Ru
 								wireshark.append(" size=").append(finalSize);
 								addAttribute(sb, "size", finalSize);
 							}
+						    }
 						}
-					} else {
-						wireshark.append(" size=").append(length());
-						addAttribute(sb, "size", length());
+//					} else {
+//						wireshark.append(" size=").append(length());
+//						addAttribute(sb, "size", length());
 					}
 				} else {
 					wireshark.append(" size=").append(DLNAMediaInfo.TRANS_SIZE).append(" duration=09:59:59");
